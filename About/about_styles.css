@@ -1,0 +1,284 @@
+/* ============================================================
+    ROOT COLORS (UDM BRAND)
+============================================================ */
+:root {
+    --primary: #eaaa00;
+    --blue-top: #062a69;
+    --blue-mid: #1b5ec9;
+    --blue-light: #3d7ff0;
+    --blue-bottom: #eef4ff;
+    --teal-green: #1AAE9F;
+    --text-dark: #0a0a0a;
+    --text-light: #ffffffde;
+    --text-muted: #777;
+    --soft-border: rgba(0, 40, 90, 0.08);
+    --popup-bg: rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
+    GLOBAL
+============================================================ */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    padding-top: 82px;
+    color: var(--text-dark);
+}
+
+/* ============================================================
+    SECTION TITLES
+============================================================ */
+section h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--blue-top);
+    margin-bottom: 10px;
+    text-align: center;  /* Ensure the title is centered */
+    width: 100%; /* Make sure the title takes full width */
+}
+
+/* General Section styling (for Faculty Titles) */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Ensures the section content is centered */
+    align-items: center;      /* Centers the content horizontally */
+    margin: 0 auto;           /* Center the entire section */
+    width: 100%;              /* Full-width for content to be aligned in the center */
+}
+
+/* ============================================================
+    TAB BUTTONS (Academic / Non-Academic)
+============================================================ */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: white;
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: 2px solid var(--blue-top);
+    color: var(--blue-top);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.tab-button:hover {
+    background: var(--blue-mid);
+    color: white;
+}
+
+.tab-button.active {
+    background: var(--blue-top);
+    color: white;
+}
+
+/* ============================================================
+    TAB CONTENT PANELS
+============================================================ */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================================================
+    COLLAPSIBLE DEPARTMENTS
+============================================================ */
+.collapsible {
+    background: var(--blue-light);
+    color: white;
+    cursor: pointer;
+    width: 1000px; /* Center collapsible without making it too wide */
+    margin: auto;
+    padding: 14px 18px;
+    border-radius: 6px;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    transition: 0.25s ease;
+}
+
+.collapsible:hover {
+    background: var(--primary);
+}
+
+.collapsible::after {
+    content: "▼";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.25s ease;
+}
+
+.collapsible.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Panel container */
+.staff-panel {
+    max-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    width: 80%; /* Match width of collapsible */
+    margin: 12px auto; /* Center the panel */
+    border-radius: 0 0 6px 6px;
+    padding: 0 18px;
+    border: 1px solid var(--soft-border);
+    transition: max-height 0.4s ease;
+}
+
+/* ============================================================
+    STAFF GRID
+============================================================ */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+/* ============================================================
+    STAFF CARD
+============================================================ */
+.staff-card {
+    background: var(--blue-bottom);
+    padding: 18px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
+
+.staff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+}
+
+.staff-card img {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--blue-mid);
+}
+
+.staff-card h4 {
+    margin: 6px 0 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-top);
+}
+
+.staff-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.staff-card a {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--blue-mid);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.staff-card a:hover {
+    color: var(--primary);
+}
+
+/* ============================================================
+    POPUP BACKGROUND (Blur Overlay)
+============================================================ */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--popup-bg);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+/* ============================================================
+    POPUP BOX
+============================================================ */
+.popup-box {
+    background: white;
+    padding: 28px;
+    width: min(500px, 90%);
+    border-radius: 14px;
+    position: relative;
+    border: 3px solid var(--primary);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.popup-box h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--blue-top);
+}
+
+/* ============================================================
+    CLOSE BUTTON (Red X)
+============================================================ */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: #d11a1a;
+    color: white;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.popup-close:hover {
+    background: #ff3b3b;
+}
+
+/* ============================================================
+    RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .collapsible,
+    .staff-panel {
+        width: 90%;
+    }
+}

@@ -1,0 +1,375 @@
+/* Import Inter font family from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
+
+/* Define root-level CSS variables for colors */
+:root {
+    --primary: #eaaa00;
+    --text: #ffffffdd;
+    --bg-dark: #050509;
+}
+
+/* GLOBAL STYLES */
+
+/* Apply box-sizing globally */
+* {
+    box-sizing: border-box;
+}
+
+/* Base body styling */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* --------------------------------------------- */
+/* HERO SECTION                                  */
+/* --------------------------------------------- */
+
+/* Main hero container */
+.hero {
+    position: relative;
+    margin-top: 82px;
+    width: 100vw;
+    height: calc(100vh - 82px);
+    overflow: hidden;
+}
+
+/* --------------------------------------------- */
+/* BACKGROUND SLIDES                             */
+/* --------------------------------------------- */
+
+/* Wrapper for all hero slides */
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Individual hero slide */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out;
+}
+
+/* Active hero slide */
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* Background media shared styles */
+.hero-bg-video,
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(4px) brightness(0.55);
+    transform: scale(1.05);
+}
+
+/* Background image specific settings */
+.hero-bg-image {
+    background-size: cover;
+    background-position: center;
+}
+
+/* --------------------------------------------- */
+/* GRADIENT OVERLAY                              */
+/* --------------------------------------------- */
+
+/* Gradient overlay for readability */
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.65) 30%,
+        rgba(0, 0, 0, 0.2) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 2;
+}
+
+/* --------------------------------------------- */
+/* HERO CONTENT                                  */
+/* --------------------------------------------- */
+
+/* Layout container for hero content */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding: 60px 60px 80px 60px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+}
+
+/* --------------------------------------------- */
+/* LEFT SIDE TEXT                                */
+/* --------------------------------------------- */
+
+/* Left hero text container */
+.hero-info {
+    max-width: 560px;
+}
+
+/* Small uppercase hero tag */
+.hero-tag {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #ffffffaa;
+}
+
+/* Main hero title */
+.hero-title {
+    margin: 0 0 16px 0;
+    font-size: 54px;
+    line-height: 1.05;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Hero description text */
+.hero-desc {
+    margin: 0 0 24px 0;
+    font-size: 15px;
+    color: #ffffffbb;
+    max-width: 480px;
+}
+
+/* Hero call-to-action button */
+.hero-btn {
+    padding: 10px 28px;
+    border-radius: 999px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Hero button hover effect */
+.hero-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #000;
+}
+
+/* --------------------------------------------- */
+/* RIGHT-SIDE PREVIEW CARDS                      */
+/* --------------------------------------------- */
+
+/* Right-side preview container */
+.hero-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Preview cards viewport wrapper */
+.previews-wrapper {
+    width: 520px;
+    overflow: hidden;
+}
+
+/* Horizontal preview cards track */
+.previews-track {
+    display: flex;
+    gap: 16px;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Individual preview card */
+.preview-card {
+    position: relative;
+    min-width: 160px;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #222;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    transform: translateY(20px);
+    opacity: 0.5;
+    transition: transform 0.4s ease,
+                opacity 0.4s ease,
+                box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Active preview card */
+.preview-card.active {
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Background layer for preview cards */
+.preview-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.9);
+}
+
+/* FIXED — PREVIEW CARD IMAGES WITH ABSOLUTE PATHS */
+
+/* Preview background image 0 */
+.preview-bg-0 {
+    background-image: url("/UDM_webreboot/Assets/images/udm.jpg");
+}
+
+/* Preview background image 1 */
+.preview-bg-1 {
+    background-image: url("/UDM_webreboot/Assets/images/lab.jpg");
+}
+
+/* Preview background image 2 */
+.preview-bg-2 {
+    background-image: url("/UDM_webreboot/Assets/images/class.jpg");
+}
+
+/* Preview background image 3 */
+.preview-bg-3 {
+    background-image: url("/UDM_webreboot/Assets/images/comp.jpg");
+}
+
+/* --------------------------------------------- */
+/* PREVIEW TEXT                                  */
+/* --------------------------------------------- */
+
+/* Preview text container */
+.preview-text {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 16px;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+}
+
+/* Small preview label text */
+.preview-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+/* Preview title text */
+.preview-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* --------------------------------------------- */
+/* BOTTOM SLIDER CONTROLS                        */
+/* --------------------------------------------- */
+
+/* Container for slider controls */
+.hero-controls {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 40px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Arrow navigation buttons */
+.arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    border: 2px solid #ffffff55;
+    background: transparent;
+    color: #ffffffbb;
+    font-size: 26px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Arrow hover effect */
+.arrow:hover {
+    background: #ffffff15;
+    border-color: #ffffffaa;
+}
+
+/* Progress bar track */
+.progress-track {
+    flex: 1;
+    height: 3px;
+    border-radius: 999px;
+    background: #ffffff33;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Progress bar fill */
+.progress-bar-fill {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    background: var(--primary);
+    transform-origin: left;
+}
+
+/* Slide number display */
+.slide-number {
+    width: 60px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* --------------------------------------------- */
+/* RESPONSIVENESS                                */
+/* --------------------------------------------- */
+
+/* Tablet layout adjustments */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding: 90px 32px;
+        row-gap: 40px;
+    }
+    .hero-right {
+        justify-content: flex-start;
+    }
+    .previews-wrapper {
+        width: 100%;
+    }
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 34px;
+    }
+    .hero-desc {
+        font-size: 14px;
+    }
+    .hero-controls {
+        left: 20px;
+        right: 20px;
+        bottom: 26px;
+    }
+}

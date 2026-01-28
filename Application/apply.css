@@ -1,0 +1,441 @@
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#1f6feb;
+  --line:rgba(31,111,235,0.12);
+  --text:#0f1724;
+  --input-border:#d5def8;
+  --radius:12px;
+  --shadow: 0 6px 18px rgba(15,23,36,0.08);
+  --shadow-strong: 0 10px 30px rgba(15,23,36,0.12);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ============================================================
+   PAGE
+============================================================ */
+html,body{
+  height:100%;
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#eef4ff 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{
+  max-width:1100px;
+  margin:28px auto;
+  padding:28px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:18px;
+}
+.logo-box{
+  width:84px;
+  height:84px;
+  border-radius:8px;
+  background:linear-gradient(135deg,var(--accent),#5aa0ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  box-shadow:var(--shadow-strong);
+  flex-shrink:0;
+  font-weight:700;
+  font-size:18px;
+}
+.title h1{
+  margin:0;
+  font-size:20px;
+  letter-spacing:0.2px;
+}
+.title p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ============================================================
+   FORM CARD
+============================================================ */
+.form-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px;
+  border:1px solid var(--line);
+}
+
+/* ============================================================
+   TOP INFO
+============================================================ */
+.top-row{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-bottom:12px;
+}
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+.section{
+  margin-bottom:18px;
+  border-radius:10px;
+  overflow:hidden;
+}
+.section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  background:linear-gradient(90deg,rgba(31,111,235,0.06),rgba(31,111,235,0.02));
+  border-bottom:1px solid var(--line);
+}
+.section-header h3{
+  margin:0;
+  font-size:15px;
+  color:var(--accent);
+}
+.section-body{
+  padding:16px;
+  overflow-x:auto;
+}
+
+/* ============================================================
+   GRID SYSTEM
+============================================================ */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:12px;
+  align-items:start;
+}
+.col-12{grid-column:1 / -1;}
+.col-9{grid-column:span 9;}
+.col-8{grid-column:span 8;}
+.col-6{grid-column:span 6;}
+.col-4{grid-column:span 4;}
+.col-3{grid-column:span 3;}
+.col-2{grid-column:span 2;}
+
+/* ============================================================
+   LABELS & INPUTS
+============================================================ */
+label{
+  display:block;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+input,
+select,
+textarea{
+  width:100%;
+  padding:9px 10px;
+  border-radius:8px;
+  border:1px solid var(--input-border);
+  background:#fff;
+  font-size:14px;
+  color:var(--text);
+  box-sizing:border-box;
+  outline:none;
+}
+input[readonly]{
+  background:#f8fafc;
+  color:#475569;
+}
+textarea{
+  min-height:72px;
+  resize:vertical;
+  padding-top:10px;
+}
+.inline{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.small,
+.muted,
+.field-note{
+  font-size:13px;
+  color:var(--muted);
+}
+.field-note{
+  font-size:12px;
+  margin-top:6px;
+}
+
+/* ============================================================
+   RADIO GROUPS - FIXED
+============================================================ */
+.radio-row{
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.radio-group{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.radio-group .group-title{
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.radio-group .options{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.radio-group .options label{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Custom radio button styling */
+input[type="radio"]{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+input[type="radio"]:hover{
+  border-color: var(--accent);
+}
+input[type="radio"]:checked{
+  border-color: var(--accent);
+  background: #fff;
+}
+input[type="radio"]:checked::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: scale(1);
+}
+input[type="radio"]::before{
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Focus style for accessibility */
+input[type="radio"]:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   TABLES
+============================================================ */
+.results-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:8px;
+  font-size:14px;
+  table-layout:auto;
+}
+.results-table th,
+.results-table td{
+  border:1px solid var(--input-border);
+  padding:10px;
+  text-align:left;
+  vertical-align:middle;
+  background:#fff;
+}
+.results-table th{
+  background:linear-gradient(90deg,rgba(31,111,235,0.04),rgba(31,111,235,0.01));
+  color:var(--muted);
+  font-weight:600;
+  font-size:13px;
+  white-space:nowrap;
+}
+.results-table input{
+  width:100%;
+  min-width:120px;
+  box-sizing:border-box;
+  padding:8px 10px;
+  border-radius:8px;
+}
+
+/* ============================================================
+   OFFICE USE BOX
+============================================================ */
+.office{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.office .box{
+  flex:1 1 48%;
+  background:#f8fbff;
+  border-radius:10px;
+  padding:12px;
+  border:1px solid var(--line);
+}
+
+/* ============================================================
+   SECTION 6–8 OVERFLOW (kept as requested)
+============================================================ */
+.section:nth-of-type(6) .section-body,
+.section:nth-of-type(7) .section-body,
+.section:nth-of-type(8) .section-body{
+  overflow-x:hidden;
+}
+.section:nth-of-type(6) .grid,
+.section:nth-of-type(7) .grid,
+.section:nth-of-type(8) .grid{
+  max-width:100%;
+}
+
+/* ============================================================
+   ACTION BUTTONS
+============================================================ */
+.actions{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+.actions-left{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.actions-right{
+  display:flex;
+}
+.btn{
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:14px;
+  border:0;
+}
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(31,111,235,0.18);
+}
+.btn-primary:hover{
+  background:#1856c9;
+}
+.btn-print,
+.btn-download{
+  background:#f1f5f9;
+  border:1px solid var(--input-border);
+}
+.btn-reset{
+  background:#f8d7da;
+  color:#842029;
+  border:1px solid #f1aeb5;
+}
+.btn-exit{
+  background:#e5e7eb;
+  border:1px solid var(--input-border);
+}
+.btn-ghost{
+  background:transparent;
+  border:1px solid var(--input-border);
+  color:var(--text);
+}
+
+/* ============================================================
+   MODALS
+============================================================ */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,36,0.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.modal-overlay.active{
+  display:flex;
+}
+.modal-box{
+  background:var(--card);
+  border-radius:14px;
+  padding:22px;
+  max-width:420px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.25);
+}
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:20px;
+}
+.btn-danger{
+  background:#f8d7da;
+  color:#7a1c22;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:900px){
+  .col-6,
+  .col-4,
+  .col-3,
+  .col-8,
+  .col-9,
+  .col-2{
+    grid-column:1 / -1;
+  }
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .logo-box{
+    width:64px;
+    height:64px;
+  }
+  .actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .actions-right{
+    align-self:flex-end;
+  }
+  .radio-row{
+    flex-direction: column;
+    gap: 16px;
+  }
+  /* Sections 6–8 mobile safety */
+  .section:nth-of-type(6) .grid,
+  .section:nth-of-type(7) .grid,
+  .section:nth-of-type(8) .grid{
+    grid-template-columns:1fr;
+  }
+}

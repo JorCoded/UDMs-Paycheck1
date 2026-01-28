@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* ============================================================
+   GLOBAL PAGE STYLE
+============================================================ */
+body{
+    margin:0;
+    font-family:"Inter", Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.65;
+}
+
+/* ============================================================
+   COURSE POPUP HEADER (BANNER)
+============================================================ */
+.course-popup-header{
+    position:relative;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* Blurred background image */
+.course-popup-header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("../assets/images/comp_banner.jpg");
+    background-size:cover;
+    background-position:center;
+    filter:blur(3px) brightness(0.8);
+    transform:scale(1.15);
+    z-index:1;
+}
+
+/* Dark gradient overlay */
+.course-popup-header::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(6,42,105,0.75),
+        rgba(6,42,105,0.85)
+    );
+    z-index:2;
+}
+
+/* Header content */
+.course-popup-header-content{
+    position:relative;
+    z-index:3;
+    max-width:900px;
+    padding:0 24px;
+    color:#ffffff;
+}
+
+.course-popup-header h1{
+    margin:0;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:0.3px;
+}
+
+.course-popup-header h2{
+    margin:12px 0 6px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.course-popup-header p{
+    margin:0;
+    font-size:15px;
+    opacity:0.9;
+}
+
+/* ============================================================
+   MAIN CONTENT CONTAINER
+============================================================ */
+.course-popup-container{
+    max-width:1000px;
+    margin:50px auto 80px;
+    padding:0 24px;
+}
+
+/* ============================================================
+   COURSE SECTIONS
+============================================================ */
+.course-section{
+    background:#ffffff;
+    padding:26px 28px;
+    margin-bottom:28px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(15,23,36,0.08);
+    border:1px solid rgba(31,111,235,0.08);
+}
+
+.course-section h3{
+    margin-top:0;
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:700;
+    color:#062a69;
+}
+
+.course-section p,
+.course-section li{
+    font-size:15px;
+    color:#374151;
+}
+
+.course-section ul{
+    padding-left:20px;
+}
+
+/* ============================================================
+   APPLY SECTION (CENTERED CTA)
+============================================================ */
+.apply-section{
+    text-align:center;
+    padding:40px 28px;
+}
+
+.apply-section h3{
+    margin-bottom:18px;
+}
+
+/* Apply button */
+.apply-btn{
+    display:inline-block;
+    padding:16px 34px;
+    background:linear-gradient(
+        135deg,
+        #eaaa00,
+        #ffd24d
+    );
+    color:#062a69;
+    font-weight:800;
+    font-size:16px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 12px 30px rgba(234,170,0,0.45);
+    transition:all 0.3s ease;
+}
+
+.apply-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(234,170,0,0.6);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:768px){
+
+    .course-popup-header{
+        height:260px;
+    }
+
+    .course-popup-header h1{
+        font-size:26px;
+    }
+
+    .course-popup-header h2{
+        font-size:18px;
+    }
+
+    .course-popup-container{
+        margin-top:40px;
+    }
+
+    .course-section{
+        padding:22px;
+    }
+}
+
+/* =============================
+   BACK BUTTON
+============================= */
+
+.course-back-wrapper{
+    max-width:1100px;
+    margin:18px auto 0;
+    padding:0 24px;
+}
+
+.course-back-btn{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.85);
+    border:1px solid rgba(0,0,0,0.15);
+    color:#062a69;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.25s ease;
+    backdrop-filter:blur(6px);
+}
+
+.course-back-btn:hover{
+    background:#062a69;
+    color:#fff;
+    transform:translateX(-3px);
+}

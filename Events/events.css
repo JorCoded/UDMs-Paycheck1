@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
+
+:root {
+    --primary: #eaaa00; /* Gold */
+    --christmas-green: #0d8b3a; /* Rich Christmas green */
+    --christmas-light: #2ecc71; /* For accents if needed */
+    --blue-top: #062a69;
+    --blue-mid: #1b5ec9;
+    --blue-light: #3d7ff0;
+    --blue-bottom: #eef4ff;
+    --text-dark: #0a0a0a;
+    --text-light: #ffffffde;
+    --text-muted: #ffffff99;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    padding-top: 82px;
+    color: var(--text-dark);
+    background: #f9fbff;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+.event-hero {
+    position: relative;
+    height: 85vh;
+    min-height: 680px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.event-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover center;
+    background-position: center;
+    filter: none;
+    transform: scale(1.05);
+}
+
+.event-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.25), transparent);
+}
+
+.event-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 60px;
+    max-width: 720px;
+}
+
+.event-hero-content h1 {
+    font-size: 68px;
+    font-weight: 800;
+    margin: 0 0 20px;
+    color: white;
+}
+
+.event-hero-content p {
+    font-size: 20px;
+    color: var(--text-light);
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* ========================================
+   CHRISTMAS COUNTDOWN – FINAL VERSION (LIKE YOUR IMAGE)
+======================================== */
+.countdown-centered {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    pointer-events: none;
+    text-align: center;
+}
+
+.countdown-card {
+    display: inline-block;
+    background: var(--christmas-green);
+    border: 4px solid var(--primary);
+    border-radius: 26px;
+    padding: 32px 56px;
+    box-shadow: none;
+    pointer-events: auto;
+}
+
+.countdown-title {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 22px 0;
+    letter-spacing: 1.2px;
+}
+
+#countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    min-width: 520px;
+}
+
+.time-unit {
+    color: white;
+    text-align: center;
+}
+
+.time-unit span:first-child {
+    display: block;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.time-unit .label {
+    font-size: 16px;
+    color: #d0ffdf;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+}
+
+#countdown > div[style*="color"] {
+    color: white !important;
+}
+
+/* ========================================
+   WAVE DIVIDER (Arc Under Countdown)
+======================================== */
+.event-hero-divider {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    margin-top: -80px;
+    z-index: 5;
+}
+
+.event-hero-divider svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ========================================
+   EVENTS GRID (unchanged)
+======================================== */
+.events-section-bg {
+    background: #ffffff;
+    padding: 80px 0 120px;
+    position: relative;
+    z-index: 10;
+}
+
+.events-grid-section { padding: 0 60px; }
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.event-date {
+    background: var(--primary);
+    color: black;
+    width: 80px;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1;
+}
+
+.event-date span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.event-info { padding: 20px; flex: 1; }
+.event-info h3 { margin: 0 0 10px; font-size: 20px; font-weight: 700; }
+.event-location, .event-time { font-size: 15px; color: #555; margin: 6px 0; }
+
+.register-btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: var(--primary);
+    color: black;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 992px) {
+    .event-hero-content { padding-left: 40px; }
+    .event-hero-content h1 { font-size: 56px; }
+}
+
+@media (max-width: 768px) {
+    .countdown-card { padding: 26px 36px; border-radius: 20px; }
+    #countdown { gap: 20px; min-width: auto; }
+    .time-unit span:first-child { font-size: 52px; }
+    .countdown-title { font-size: 22px; }
+    .events-grid-section { padding: 0 30px; }
+}
+
+@media (max-width: 480px) {
+    .time-unit span:first-child { font-size: 44px; }
+    .countdown-title { font-size: 19px; }
+    #countdown { gap: 12px; }
+    .countdown-card { padding: 20px 24px; }
+    .event-hero-content h1 { font-size: 46px; }
+    .event-hero-content { padding-left: 20px; }
+}
+
+/* ==================== NEWS GRID (STATIC) ==================== */
+.news-section {
+    padding: 100px 20px;
+    background: #f9fbff;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.news-card {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.news-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 40px 20px 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.news-card:hover .news-title-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ==================== POPUP MODAL ==================== */
+.news-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+.news-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 5px solid var(--primary);
+    border-radius: 20px;
+    max-width: 960px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.news-modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    color: #e74c3c;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    color: #c0392b;
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 60px 50px 50px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+/* ========================================
+   Section Title Styling (News & Past Events)
+======================================== */
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--blue-top); /* Use a strong color */
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    width: 90px;
+    height: 5px;
+    background: var(--primary); /* Gold accent */
+    position: absolute;
+    bottom: -12px; /* Slight space between the text and line */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 30px; /* Adjust font size on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 26px; /* Further adjust for mobile screens */
+        margin-bottom: 15px;
+    }
+}

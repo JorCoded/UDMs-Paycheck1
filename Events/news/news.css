@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* News Modal Content */
+.news-modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px;
+    margin: 50px auto;
+    font-size: 1.1em;
+}
+
+.news-modal-content h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: var(--primary); /* Using the primary color */
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Subtitle and date styling */
+.news-modal-content h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--blue-top); /* Subtitle color */
+    text-align: center;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+/* Paragraph styling for the main content */
+.news-modal-content p {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 30px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Sections Styling */
+.news-modal-content .section-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 30px;
+    text-decoration: underline;
+}
+
+.news-modal-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.news-modal-content li {
+    margin-bottom: 10px;
+}
+
+/* Decorative Box Around Articles/Sections */
+.news-modal-content .article-section {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-modal-content .article-section p {
+    text-align: left;
+}
+
+/* News Letter Columns */
+.news-modal-content .columns {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.news-modal-content .column {
+    width: 48%;
+}
+
+.news-modal-content .column h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--blue-mid);
+    margin-bottom: 15px;
+}
+
+/* Modal Close Button */
+.close {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.close:hover {
+    color: var(--primary);
+}
+
+/* Page Footer */
+.news-modal-footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 50px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .news-modal-content {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .news-modal-content h1 {
+        font-size: 2.2em;
+    }
+
+    .news-modal-content .section-title {
+        font-size: 1.3em;
+    }
+
+    .columns {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-modal-content h1 {
+        font-size: 1.8em;
+    }
+
+    .news-modal-content h2 {
+        font-size: 1.4em;
+    }
+
+    .news-modal-content p {
+        font-size: 1em;
+    }
+
+    .back-btn {
+        font-size: 1em;
+        padding: 10px 18px;
+    }
+}

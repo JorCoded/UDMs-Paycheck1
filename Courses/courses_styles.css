@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
+
+:root {
+    --primary: #eaaa00;
+    --blue-top: #062a69;
+    --blue-mid: #1b5ec9;
+    --blue-light: #3d7ff0;
+    --blue-bottom: #eef4ff;
+    --text-dark: #0a0a0a;
+    --text-light: #ffffffde;
+    --text-muted: #ffffff99;
+}
+
+/* -----------------------------------------
+   GLOBAL PAGE BACKGROUND
+------------------------------------------ */
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    padding-top: 82px;
+
+    color: var(--text-dark);
+}
+
+/* -----------------------------------------
+   HERO SECTION
+------------------------------------------ */
+
+.course-hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.course-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55);
+    transform: scale(1.05);
+}
+
+.course-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.25),
+        transparent
+    );
+}
+
+.course-hero-content {
+    position: relative;
+    padding-left: 60px;
+    max-width: 680px;
+}
+
+.course-hero-content h1 {
+    font-size: 62px;
+    font-weight: 800;
+    margin: 0 0 16px;
+    color: white;
+}
+
+.course-hero-content p {
+    font-size: 18px;
+    color: var(--text-light);
+    max-width: 560px;
+}
+
+/* -----------------------------------------
+   WAVE DIVIDER
+------------------------------------------ */
+
+.course-hero-divider {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    margin-top: -80px;
+    z-index: 5;
+}
+
+.course-hero-divider svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* -----------------------------------------
+   COURSE SECTION BACKGROUND (WHITE)
+------------------------------------------ */
+
+.course-section-bg {
+    background: #ffffff;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 80px;
+    padding-top: 20px;
+}
+
+/* -----------------------------------------
+   FILTERS
+------------------------------------------ */
+
+.course-filters-section {
+    padding: 40px 60px 10px 60px;
+    background: #ffffff; /* PURE WHITE */
+    position: relative;
+    margin-top: -80px; /* pulls it upward over the blue */
+    z-index: 20; /* sits above the wave */
+}
+
+.filters-container {
+    display: flex;
+    gap: 20px;
+}
+
+.filter-select {
+    padding: 12px 18px;
+    background: white;
+    color: #0e4aa8;
+    border: 2px solid #0e4aa8;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-select:focus {
+    border-color: var(--primary);
+}
+
+.reset-btn {
+    padding: 12px 26px;
+    background: var(--primary);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.reset-btn:hover {
+    background: #ffcd33;
+}
+
+/* -----------------------------------------
+   COURSE GRID
+------------------------------------------ */
+
+.course-grid-section {
+    padding: 30px 60px 20px 60px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 28px;
+}
+
+/* SOFT TINTED COURSE CARDS */
+.course-card {
+    background: rgba(240, 247, 255, 0.75); /* subtle blue tint */
+    border-radius: 18px;
+    padding: 24px;
+    border: 2px solid rgba(0, 54, 128, 0.10);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    transition: 0.28s ease;
+    cursor: pointer;
+    color: #000;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.22);
+    background: rgba(230, 242, 255, 0.95);
+}
+
+.course-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.campus-label {
+    font-size: 14px;
+    color: var(--blue-top);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* BUTTONS */
+.course-card-actions {
+    margin-top: 12px;
+}
+
+.view-btn {
+    padding: 10px 18px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.view-btn:hover {
+    background: var(--primary);
+    color: black;
+}
