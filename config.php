@@ -109,7 +109,7 @@ define("DB_USER", "root");
 define("DB_PASS", "");
 
 /* PDO database connection used across the project */
-try {
+/*try {
     $pdo = new PDO(
         "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
         DB_USER,
@@ -123,3 +123,4 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed.");
 }
+*/
