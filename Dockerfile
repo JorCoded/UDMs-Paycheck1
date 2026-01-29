@@ -15,7 +15,8 @@ COPY ./ /UDM_webreboot/
 
 # Set permissions
 
-# RUN chown -R www-data:www-data /html/UDM_webreboot
+RUN chown -R www-data:www-data /UDM_webreboot/
+
 
 
 
